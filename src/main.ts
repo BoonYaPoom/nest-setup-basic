@@ -37,14 +37,14 @@ async function bootstrap() {
       },
       'access-token',
     )
-    // .addBearerAuth(
-    //   {
-    //     type: 'apiKey',
-    //     name: 'x-api-key', // ชื่อของ API Key ที่จะใช้ใน header
-    //     in: 'header', // API Key จะถูกส่งผ่านใน header
-    //   },
-    //   'api-key', // ชื่อของ security scheme สำหรับ API Key
-    // )
+    .addBearerAuth(
+      {
+        type: 'apiKey',
+        name: 'x-api-key', // ชื่อของ API Key ที่จะใช้ใน header
+        in: 'header', // API Key จะถูกส่งผ่านใน header
+      },
+      'api-key', // ชื่อของ security scheme สำหรับ API Key
+    )
     .build();
   const document = SwaggerModule.createDocument(app, config);
   //โชว์เฉพาะที่มี @ApiOperation

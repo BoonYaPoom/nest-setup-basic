@@ -12,7 +12,7 @@ export class UsersController {
   @Get()
   @ApiOperation({ summary: 'notify-requester' })
   @ApiBearerAuth('access-token')
-  //   @ApiBearerAuth('api-key')
+  @ApiBearerAuth('api-key')
   getAllUsers() {
     const data = this.usersService.findAll();
     return {
