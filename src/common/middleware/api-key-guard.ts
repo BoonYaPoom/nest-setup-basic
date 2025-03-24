@@ -8,7 +8,9 @@ import {
 @Injectable()
 export class ApiKeyGuard implements CanActivate {
   canActivate(context: ExecutionContext): boolean {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const request = context.switchToHttp().getRequest();
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
     const apiKey = request.headers['x-api-key'];
 
     // ตรวจสอบว่า API key ถูกรวมอยู่ใน header และถูกต้องหรือไม่
